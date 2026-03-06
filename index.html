@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 0;
+            background-color: lightpink;
+            display: flex ;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        /* .mainContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+            width: 500px;
+            background-color: aliceblue;
+        } */
+        .tasksDisplay{
+            /* background-color: rgb(255, 255, 255); */
+            width: 300px;
+            height: 300px;
+         }
+         .inputTasks{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin :20px;
+         }
+        input[id=todo]{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+            height: 35px;
+            width: 300px;
+            /* margin: 30px 10px 20px 0; */
+            border: none;
+            border-radius: 5px;
+            box-shadow: 5px 6px 10px rgb(0, 0, 0);
+        }
+        .buttons{
+                display: flex;
+                flex-direction: row;
+                justify-content: center ;
+                align-items: center;
+                margin-top: 10px;
+            }
+        #addButt{
+            display: block;
+            width: 60px;
+            height: 35px;
+            border: none;
+            margin-left: 30px;
+            border-radius: 5px;
+            box-shadow: 5px 6px 10px rgb(0, 0, 0);
+            background: linear-gradient(to right,green,lime);
+        }
+        #addButt:active{
+            opacity: .8;
+        }
+       
+        .clearButton{
+
+            width: 60px;
+            height: 35px;
+            border: none;
+            margin-left: 30px;
+            border-radius: 5px;
+            box-shadow: 5px 6px 10px rgb(0, 0, 0);
+            background: linear-gradient(to right,maroon,red);
+        }
+        .clearButton:active{
+            opacity: .8;
+        }
+        .tasksDisplay {
+            border-radius: 15px;
+            box-shadow: 5px 6px 10px rgb(0, 0, 0);
+            background-color: azure;
+            display: flex;
+            justify-content: center;
+        }
+        #showTask {
+            padding-top: 30px;
+            list-style-type: none;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: lighter;
+            color: maroon;
+        }
+
+        @media(max-width:600px){
+        .inputTasks{
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            }
+        .buttons{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start ;
+                align-items: flex-start;
+                gap: 10px;
+               margin-top: 20px;
+            }
+            #addButt, .clearButton{
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="mainContainer"> -->
+    <div class="inputTasks">
+    <input id="todo" type="text">
+    <div class="buttons">
+    <button id="addButt" class="addButton" onclick="todoFunc()">Add</button>
+    <button class="clearButton" onclick="
+       var tasks = document.getElementById('todo').value;
+       document.getElementById('showTask').innerHTML= '<ul></ul>' ;
+       tasksCount = 0;
+       console.log(tasksCount);
+       document.getElementById('addButt').style = 'display:block';
+    ">clear all</button></div>
+    </div>
+    <h2>Task List</h2>
+    <div class="tasksDisplay">
+    <ul id="showTask">
+    </ul>
+    </div>
+    <!-- </div> -->
+   <script src="todolist.js"> </script>
+</body>
+</html>
